@@ -9,8 +9,6 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-import com.br.flashcard.enums.Discipline;
-
 @Entity
 @Table(name = "cards")
 public class Card {
@@ -18,7 +16,7 @@ public class Card {
 	@Id
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Long id;
+	private Integer id;
 
 	@Column(name = "discipline")
 	@NotNull(message = "Discipline can't be null")
@@ -36,8 +34,7 @@ public class Card {
 	private String answer;
 
 	@Column(name = "privacy")
-	@NotEmpty(message = "Privacy can't be empty")
-	private Boolean privacy;
+	private boolean privacy;
 
 	public Card() {
 	}
@@ -66,19 +63,19 @@ public class Card {
 		this.answer = answer;
 	}
 
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public Boolean isPrivacy() {
+	public boolean isPrivacy() {
 		return privacy;
 	}
 
-	public void setPrivacy(Boolean privacy) {
+	public void setPrivacy(boolean privacy) {
 		this.privacy = privacy;
 	}
 

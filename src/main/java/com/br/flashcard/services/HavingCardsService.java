@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.br.flashcard.exceptions.RegisterNotFoundException;
-import com.br.flashcard.models.Card;
 import com.br.flashcard.models.HavingCards;
 import com.br.flashcard.repository.HavingCardsRepository;
 
