@@ -36,7 +36,7 @@ public class UserService {
 		checkExists(optUser);
 		User newUser = optUser.get();
 		newUser.setEmail(user.getEmail());
-		newUser.setPassword(user.getPassword());
+		newUser.setImage(user.getImage());
 		this.userRepository.save(newUser);
 		return newUser;
 	}

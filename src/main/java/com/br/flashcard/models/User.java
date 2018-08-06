@@ -16,10 +16,8 @@ public class User {
 	@NotEmpty(message = "Username can't be empty")
 	private String username;
 
-	@Column(name = "password")
-	@NotNull(message = "Password can't be null")
-	@NotEmpty(message = "Password can't be empty")
-	private String password;
+	@Column(name = "image")
+	private String image;
 
 	@Id
 	@Column(name = "email")
@@ -38,12 +36,12 @@ public class User {
 		this.username = username;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getImage() {
+		return image;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 	public String getEmail() {
