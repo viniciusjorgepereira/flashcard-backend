@@ -7,5 +7,5 @@ import com.br.flashcard.models.HavingCards;
 
 @Repository
 public interface HavingCardsRepository extends JpaRepository<HavingCards, Long> {
-
+	
 }

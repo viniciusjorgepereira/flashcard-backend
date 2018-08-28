@@ -16,7 +16,7 @@ public class Card {
 	@Id
 	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
+	private Long id;
 
 	@Column(name = "discipline")
 	@NotNull(message = "Discipline can't be null")
@@ -35,6 +35,10 @@ public class Card {
 
 	@Column(name = "privacy")
 	private boolean privacy;
+
+	@Column(name = "result")
+	@NotNull(message = "Result can't be null")
+	private String result;
 
 	public Card() {
 	}
@@ -63,11 +67,11 @@ public class Card {
 		this.answer = answer;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -79,4 +83,11 @@ public class Card {
 		this.privacy = privacy;
 	}
 
+	public String getResult() {
+		return result;
+	}
+
+	public void setResult(String result) {
+		this.result = result;
+	}
 }
