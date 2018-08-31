@@ -19,11 +19,11 @@ public class HavingCards {
 
 	@Column(name = "user_email")
 	@NotEmpty
-	private String userEmail;
+	private String useremail;
 
 	@Column(name = "card_id")
 	@NotEmpty
-	private Long cardId;
+	private Long cardid;
 
 	public HavingCards() {
 	}
@@ -37,19 +37,19 @@ public class HavingCards {
 	}
 
 	public String getUserEmail() {
-		return userEmail;
+		return useremail;
 	}
 
 	public void setUserEmail(String userEmail) {
-		this.userEmail = userEmail;
+		this.useremail = userEmail;
 	}
 
 	public Long getCardId() {
-		return cardId;
+		return cardid;
 	}
 
 	public void setCardId(Long cardId) {
-		this.cardId = cardId;
+		this.cardid = cardId;
 	}
 
 }
