@@ -43,6 +43,10 @@ public class Card {
 	@Column(name = "author")
 	@NotEmpty(message = "Author can't be empty")
 	private String author;
+	
+	@Column(name = "image")
+	@NotEmpty(message = "Image can't be empty")
+	private String image;
 
 	public Card() {
 	}
@@ -101,6 +105,14 @@ public class Card {
 
 	public void setAuthor(String author) {
 		this.author = author;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 	
 }
