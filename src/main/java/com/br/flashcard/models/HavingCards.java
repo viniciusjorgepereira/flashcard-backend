@@ -7,7 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "having_cards")
@@ -19,12 +18,10 @@ public class HavingCards {
 	private Long id;
 
 	@Column(name = "user_email")
-	@NotNull
 	@NotEmpty
 	private String userEmail;
 
 	@Column(name = "card_id")
-	@NotNull
 	@NotEmpty
 	private Long cardId;
 
