@@ -40,6 +40,10 @@ public class Card {
 	@NotEmpty(message = "Result can't be empty")
 	private String result;
 
+	@Column(name = "author")
+	@NotEmpty(message = "Author can't be empty")
+	private String author;
+
 	public Card() {
 	}
 
@@ -90,4 +94,13 @@ public class Card {
 	public void setResult(String result) {
 		this.result = result;
 	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	public void setAuthor(String author) {
+		this.author = author;
+	}
+	
 }
