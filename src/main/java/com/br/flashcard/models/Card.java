@@ -37,7 +37,6 @@ public class Card {
 	private boolean privacy;
 
 	@Column(name = "result")
-	@NotEmpty(message = "Result can't be empty")
 	private String result;
 
 	@Column(name = "author")
