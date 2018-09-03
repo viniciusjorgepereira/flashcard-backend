@@ -22,7 +22,7 @@ public class User {
 	@Id
 	@Column(name = "email")
 	@NotNull(message = "Email can't be null")
-	@NotEmpty (message = "Email can't be empty")
+	@NotEmpty(message = "Email can't be empty")
 	private String email;
 
 	public User() {
