@@ -24,8 +24,8 @@ public class CardController {
 	private CardService cardService;
 
 	@RequestMapping(value = "/card", method = RequestMethod.GET)
-	public List<Card> getAll() {
-		return this.cardService.getAll();
+	public List<Card> getAllPublicCards() {
+		return this.cardService.getAllPublicCards();
 	}
 
 	@RequestMapping(value = "/card", method = RequestMethod.POST)
@@ -36,6 +36,11 @@ public class CardController {
 	@RequestMapping(value = "/card/{id}", method = RequestMethod.GET)
 	public Card getById(@PathVariable("id") Long id) {
 		return this.cardService.getById(id);
+	}
+
+	@RequestMapping(value="/card/{author}", method = RequestMethod.GET)
+	public List<Card> getUserCards(@PathVariable("author") String author) {
+		return this.cardService.getUserCards(author);
 	}
 
 	@RequestMapping(value = "/card/{id}", method = RequestMethod.PUT)

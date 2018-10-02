@@ -19,6 +19,14 @@ public class CardService {
 	public List<Card> getAll() {
 		return this.cardRepository.findAll();
 	}
+	
+	public List<Card> getAllPublicCards() {
+		return this.cardRepository.getAllPublicCards();
+	}
+	
+	public List<Card> getUserCards(String author) {
+		return this.cardRepository.getUserCards(author);
+	}
 
 	public Card getById(Long id) {
 		Optional<Card> card = this.cardRepository.findById(id);
