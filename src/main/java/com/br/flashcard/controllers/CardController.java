@@ -38,7 +38,7 @@ public class CardController {
 		return this.cardService.getById(id);
 	}
 
-	@RequestMapping(value="/card/{author}", method = RequestMethod.GET)
+	@RequestMapping(value = "/card/user/{author}", method = RequestMethod.GET)
 	public List<Card> getUserCards(@PathVariable("author") String author) {
 		return this.cardService.getUserCards(author);
 	}
