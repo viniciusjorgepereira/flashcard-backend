@@ -40,7 +40,7 @@ public class UserService {
 		this.userRepository.save(newUser);
 		return newUser;
 	}
-	
+
 	public User delete(String email) {
 		Optional<User> optUser = this.userRepository.findById(email);
 		checkExists(optUser);
@@ -48,7 +48,7 @@ public class UserService {
 		this.userRepository.delete(user);
 		return user;
 	}
-	
+
 	private void checkExists(Optional<User> user) {
 		if (!user.isPresent()) {
 			throw new RegisterNotFoundException("User not exists");
