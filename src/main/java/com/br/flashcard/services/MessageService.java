@@ -1,5 +1,8 @@
 package com.br.flashcard.services;
 
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,6 +24,7 @@ public class MessageService {
 	}
 
 	public Message save(Message msg) {
+		msg.setCreatedAt(LocalDateTime.now());
 		this.msgRepository.save(msg);
 		return msg;
 	}
@@ -35,6 +39,7 @@ public class MessageService {
 		newMsg.setImage(msg.getImage());
 		newMsg.setMessage(msg.getMessage());
 		newMsg.setCardId(msg.getCardId());
+		newMsg.setEdit(msg.isEdit());
 		this.msgRepository.save(newMsg);
 		return newMsg;
 	}

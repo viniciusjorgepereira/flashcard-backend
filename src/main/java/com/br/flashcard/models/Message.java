@@ -1,6 +1,6 @@
 package com.br.flashcard.models;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +10,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name = "messages")
@@ -31,8 +35,12 @@ public class Message {
 
 	@Column(name = "createdAt")
 	@NotNull
-	@NotEmpty
-	private Date createdAt;
+	@JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
+	@DateTimeFormat(iso = DateTimeFormat.ISO.TIME)
+	private LocalDateTime createdAt;
+	
+	@Column(name="edit")
+	private boolean edit;
 
 	@Column(name = "author")
 	@NotNull
@@ -55,11 +63,11 @@ public class Message {
 		this.message = message;
 	}
 
-	public Date getCreatedAt() {
+	public LocalDateTime getCreatedAt() {
 		return createdAt;
 	}
-
-	public void setCreatedAt(Date createdAt) {
+	
+	public void setCreatedAt(LocalDateTime createdAt) {
 		this.createdAt = createdAt;
 	}
 
@@ -94,5 +102,13 @@ public class Message {
 	public void setCardId(Long cardId) {
 		this.cardId = cardId;
 	}
-	
+
+	public boolean isEdit() {
+		return edit;
+	}
+
+	public void setEdit(boolean edit) {
+		this.edit = edit;
+	}
+
 }
