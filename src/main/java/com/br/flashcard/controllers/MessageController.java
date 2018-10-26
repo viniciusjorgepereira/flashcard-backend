@@ -28,6 +28,11 @@ public class MessageController {
 		return this.msgService.getAll();
 	}
 
+	@RequestMapping(value = "/msg/card/{cardId}", method = RequestMethod.GET)
+	public List<Message> getMessagesByCardId(@PathVariable("cardId") Long cardId) {
+		return this.msgService.getMessagesByCardId(cardId);
+	}
+
 	@RequestMapping(value = "/msg", method = RequestMethod.POST)
 	public Message save(@RequestBody Message msg) {
 		return this.msgService.save(msg);

@@ -38,14 +38,18 @@ public class Message {
 	@JsonFormat(pattern = "dd-MM-yyyy HH:mm:ss")
 	@DateTimeFormat(iso = DateTimeFormat.ISO.TIME)
 	private LocalDateTime createdAt;
-	
-	@Column(name="edit")
+
+	@Column(name = "edit")
 	private boolean edit;
 
 	@Column(name = "author")
 	@NotNull
 	@NotEmpty
 	private String author;
+
+	@Column(name = "email")
+	@NotEmpty
+	private String email;
 
 	@Column(name = "image")
 	@NotNull
@@ -66,7 +70,7 @@ public class Message {
 	public LocalDateTime getCreatedAt() {
 		return createdAt;
 	}
-	
+
 	public void setCreatedAt(LocalDateTime createdAt) {
 		this.createdAt = createdAt;
 	}
@@ -109,6 +113,14 @@ public class Message {
 
 	public void setEdit(boolean edit) {
 		this.edit = edit;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }

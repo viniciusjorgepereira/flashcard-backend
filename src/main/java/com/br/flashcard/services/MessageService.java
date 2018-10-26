@@ -23,8 +23,13 @@ public class MessageService {
 		return this.msgRepository.findAll();
 	}
 
+	public List<Message> getMessagesByCardId(Long id) {
+		return this.msgRepository.getMessagesByCardId(id);
+	}
+
 	public Message save(Message msg) {
 		msg.setCreatedAt(LocalDateTime.now());
+		msg.setEdit(false);
 		this.msgRepository.save(msg);
 		return msg;
 	}
@@ -40,6 +45,7 @@ public class MessageService {
 		newMsg.setMessage(msg.getMessage());
 		newMsg.setCardId(msg.getCardId());
 		newMsg.setEdit(msg.isEdit());
+		newMsg.setEmail(msg.getEmail());
 		this.msgRepository.save(newMsg);
 		return newMsg;
 	}
